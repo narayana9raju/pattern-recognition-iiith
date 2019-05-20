@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+
+#load_custom_datasets{width: 25%;
+                    height: 110px;
+                    margin-left: 70%;}
+
+#class_one_custom{padding: 10px;}
+
+#class_two_custom{padding: 10px;}
+
+select.one,select.two {width: 100px;
+                      font-size: 15px;
+                      margin-left: 10px;
+                      margin-right: 20px;}
+
+#mark_points {width: 25%;
+             margin-left: 70%;}
+
+#class_two_mark{padding-left:30px;}
+
+#clear_mark{padding-left:30px;}
+
+#calculate{width: 25%;
+           margin-left: 70%;}
+
+
+input.class_one_mean{width: 30px;}
+
+input.class_two_mean{width: 30px;}
+
+input.class_one_covariance{width: 30px;}
+
+input.class_two_covariance{width: 30px;}
+
+input.class_one_estimate{width: 30px;}
+
+input.class_two_estimate{width: 30px;}
+
+input.class_one_count{width: 60px;}
+
+input.class_two_count{width: 60px;}
+
+#generate_random_values{width: 25%;
+                        margin-left: 70%;}
+
+input.class_one_generate{width: 30px;}
+
+input.class_two_generate{width: 30px;}
+
+#resize_axes{margin-left: 70%;}
+
+
+
+
+
+</style>
+
+</head>
+
+<body>
+
+<form>
+ <fieldset id="load_custom_datasets">
+
+  <legend>Load Custom Datasets</legend>
+
+    <table>
+
+      <tr>
+
+        <td>
+          <div id="class_one_custom">Class 1</div>
+        </td>
+
+        <td> 
+           <select class="two">
+	               <option value="t1 dataset">T1</option>
+	               <option value="t2 dataset">T2</option>
+	               <option value="t3 dataset">T3</option>
+	               <option value="t4 dataset">T4</option>
+           </select> 
+        </td>
+
+        <td>      
+
+            <form action="" method="get">
+ 
+              <input type="submit" value="Load">
+
+            </form>
+
+        </td> 
+
+      </tr>
+
+
+      <tr>
+
+        <td>
+          <div id="class_two_custom">Class 2</div>
+        </td>
+
+        <td> 
+           <select class="one">
+                 <option value="t1 dataset">T1</option>
+                 <option value="t2 dataset">T2</option>
+                 <option value="t3 dataset">T3</option>
+                 <option value="t4 dataset">T4</option>
+           </select> 
+        </td>
+
+        <td>      
+
+            <form action="" method="get">
+ 
+              <input type="submit" value="Load">
+
+            </form>
+
+        </td> 
+
+      </tr>
+      
+    </table>    
+  
+  </fieldset>
+</form>
+
+<br>
+
+<form>
+ <fieldset id="mark_points">
+
+  <legend>Mark Points</legend>
+  
+    <table>
+
+     <tr>
+
+      <td>
+
+
+  
+  
+         <div id="class_one_mark">
+  
+          <form action="" method="get">
+  
+             <input type="submit" value="Class 1">
+  
+          </form>
+
+         </div>
+
+       </td>
+
+
+       <td>
+
+
+  
+  
+         <div id="class_two_mark">
+  
+          <form action="" method="get">
+  
+            <input type="submit" value="Class 2">
+  
+          </form>
+
+         </div>
+
+      </td>
+     
+
+      <td>
+
+
+  
+  
+          <div id="clear_mark">
+  
+            <form action="" method="get">
+  
+             <input type="submit" value="Clear">
+  
+            </form>
+
+           </div>
+
+            </td>
+
+</tr>
+
+
+</table>
+  
+
+ 
+
+</fieldset>
+</form>
+
+<br>
+
+
+<form>
+<fieldset id="calculate">
+
+  <legend>Calculate</legend>
+
+
+  <table cellpadding="10">
+
+    <tr>
+      <td> </td>
+
+      <td><b>Class 1</b></td>
+
+      <td><b>Class 2</b></td>
+
+    </tr> 
+
+    <tr>
+      <td>Mean</td>
+      <td> 
+        <input class="class_one_mean" type="text"> 
+        <input class="class_one_mean" type="text">
+      </td>
+
+      <td> 
+        <input class="class_two_mean" type="text"> 
+        <input class="class_two_mean" type="text">
+      </td>
+    </tr> 
+
+
+     <tr>
+      <td>Co-Variance</td>
+      <td> 
+        <input class="class_one_covariance" type="text"> 
+        <input class="class_one_covariance" type="text">
+      </td>
+
+      <td> 
+        <input class="class_two_covariance" type="text"> 
+        <input class="class_two_covariance" type="text">
+      </td>
+    </tr>
+
+
+    <tr>
+      <td>
+        <div id="estimate">
+  
+          <form action="" method="get">
+  
+             <input type="submit" value="Estimate">
+  
+          </form>
+
+         </div>
+      </td>
+
+      <td> 
+        <input class="class_one_estimate" type="text"> 
+        <input class="class_one_estimate" type="text">
+      </td>
+
+      <td> 
+        <input class="class_two_estimate" type="text"> 
+        <input class="class_two_estimate" type="text">
+      </td>
+    </tr>
+
+  </table>
+
+
+  </fieldset>
+</form>
+
+<br>
+
+
+<form>
+  <fieldset id="generate_random_values">
+
+   <legend>Generate Random Values</legend>
+
+    <table cellpadding="10">
+
+    <tr>
+      <td> </td>
+
+      <td><b>Class 1</b></td>
+
+      <td><b>Class 2</b></td>
+
+    </tr> 
+
+    <tr>
+      <td>Count</td>
+      <td> 
+        <input class="class_one_count" type="number" value="100">
+      </td>
+
+      <td> 
+        <input class="class_two_count" type="number" value="100">
+      </td>
+    </tr> 
+
+    <tr>
+      <td>Mean</td>
+      <td> 
+        <input class="class_one_mean" type="text"> 
+        <input class="class_one_mean" type="text">
+      </td>
+
+      <td> 
+        <input class="class_two_mean" type="text"> 
+        <input class="class_two_mean" type="text">
+      </td>
+    </tr> 
+
+
+     <tr>
+      <td>Co-Variance</td>
+      <td> 
+        <input class="class_one_covariance" type="text"> 
+        <input class="class_one_covariance" type="text">
+      </td>
+
+      <td> 
+        <input class="class_two_covariance" type="text"> 
+        <input class="class_two_covariance" type="text">
+      </td>
+    </tr>
+
+
+    <tr>
+      <td>
+        <div id="estimate">
+  
+          <form action="" method="get">
+  
+             <input type="submit" value="Generate">
+  
+          </form>
+
+         </div>
+      </td>
+
+      <td> 
+        <input class="class_one_generate" type="text"> 
+        <input class="class_one_generate" type="text">
+      </td>
+
+      <td> 
+        <input class="class_two_generate" type="text"> 
+        <input class="class_two_generate" type="text">
+      </td>
+    </tr>
+
+  </table>
+
+ </fieldset>
+</form>
+
+<br>
+
+
+<table id="resize_axes">
+  <tr>
+    <td>
+  
+          <form action="" method="get">
+  
+             <input type="submit" value="Resize Axes">
+  
+          </form>
+      
+
+    </td>
+
+
+  </tr>
+
+ </table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
