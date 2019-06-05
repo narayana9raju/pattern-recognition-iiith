@@ -3,8 +3,12 @@
 
 <head>
     <style>
+        #total {
+            background-color: #ced3db;
+        }
+        
         #load_custom_datasets {
-            width: 25%;
+            width: 26%;
             height: 110px;
             margin-left: 70%;
         }
@@ -26,7 +30,7 @@
         }
         
         #mark_points {
-            width: 25%;
+            width: 26%;
             margin-left: 70%;
         }
         
@@ -39,7 +43,7 @@
         }
         
         #calculate {
-            width: 25%;
+            width: 26%;
             margin-left: 70%;
         }
         
@@ -68,15 +72,17 @@
         }
         
         input.class_one_count {
-            width: 60px;
+            width: 68px;
+            height: 21px;
         }
         
         input.class_two_count {
-            width: 60px;
+            width: 68px;
+            height: 21px;
         }
         
         #generate_random_values {
-            width: 25%;
+            width: 26%;
             margin-left: 70%;
         }
         
@@ -89,314 +95,393 @@
         }
         
         #resize_axes {
-            margin-left: 70%;
+            margin-left: 69.94%;
         }
+        
+        #graph {
+            height: 100%;
+            width: 65%;
+            position: absolute;
+            padding-top: 4%;
+        }
+        
+        #sidebar {
+            height: 100%;
+            position: relative;
+            padding-top: 20px;
+            padding-bottom: 10px;
+        }
+        
+        #title {
+            font-weight: bold;
+        }
+
     </style>
+
+  <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>  -->
+  <script src="library/plot.js"></script> 
+    
 
 </head>
 
 <body>
 
-    <form>
-        <fieldset id="load_custom_datasets">
+    <div id="totalpage">
 
-            <legend>Load Custom Datasets</legend>
+        <fieldset id="title">
+            <legend>PATTERN RECOGNITION: Experiment 2</legend>
+            <div id="graph">
+                  <div id="myDiv"></div>
 
-            <table>
 
-                <tr>
 
-                    <td>
-                        <div id="class_one_custom">Class 1</div>
-                    </td>
+            
 
-                    <td>
-                        <select class="two">
-                            <option value="t1 dataset">T1</option>
-                            <option value="t2 dataset">T2</option>
-                            <option value="t3 dataset">T3</option>
-                            <option value="t4 dataset">T4</option>
-                        </select>
-                    </td>
+            </div>
+    <div id="sidebar">
+                <div id="load_custom_datasets">
+                    <form>
+                        <fieldset>
+                            <legend>Load Custom Datasets</legend>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div id="class_one_custom">Class 1</div>
+                                    </td>
+                                    <td>
+                                        <select class="two">
+                                            <option value="t1 dataset">T1</option>
+                                            <option value="t2 dataset">T2</option>
+                                            <option value="t3 dataset">T3</option>
+                                            <option value="t4 dataset">T4</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <form action="" method="get">
+                                            <input type="submit" value="Load" onclick="t_one_load()">
+                                        </form>
+                                    </td>
+                                </tr>
 
-                    <td>
+                                <tr>
+                                    <td>
+                                        <div id="class_two_custom">Class 2</div>
+                                    </td>
+                                    <td>
+                                        <select class="one">
+                                            <option value="t1 dataset">T1</option>
+                                            <option value="t2 dataset">T2</option>
+                                            <option value="t3 dataset">T3</option>
+                                            <option value="t4 dataset">T4</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <form action="" method="get">
+                                            <input type="submit" value="Load">
+                                        </form>
+                                    </td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </form>
+                </div>
 
-                        <form action="" method="get">
+                <br>
+                <br>
 
-                            <input type="submit" value="Load">
+                <div id="mark_points">
 
-                        </form>
+                    <form>
+                        <fieldset>
 
-                    </td>
+                            <legend>Mark Points</legend>
 
-                </tr>
+                            <table>
 
-                <tr>
+                                <tr>
 
-                    <td>
-                        <div id="class_two_custom">Class 2</div>
-                    </td>
+                                    <td>
 
-                    <td>
-                        <select class="one">
-                            <option value="t1 dataset">T1</option>
-                            <option value="t2 dataset">T2</option>
-                            <option value="t3 dataset">T3</option>
-                            <option value="t4 dataset">T4</option>
-                        </select>
-                    </td>
+                                        <div id="class_one_mark">
 
-                    <td>
+                                            <form action="" method="get">
 
-                        <form action="" method="get">
+                                                <input type="submit" value="Class 1">
 
-                            <input type="submit" value="Load">
+                                            </form>
 
-                        </form>
+                                        </div>
 
-                    </td>
+                                    </td>
 
-                </tr>
+                                    <td>
 
-            </table>
+                                        <div id="class_two_mark">
+
+                                            <form action="" method="get">
+
+                                                <input type="submit" value="Class 2">
+
+                                            </form>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+
+                                        <div id="clear_mark">
+
+                                            <form action="" method="get">
+
+                                                <input type="submit" value="Clear">
+
+                                            </form>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                        </fieldset>
+                    </form>
+
+                    <br>
+
+                </div>
+
+                <div id="calculate">
+
+                    <form>
+                        <fieldset>
+
+                            <legend>Calculate</legend>
+
+                            <table cellpadding="10">
+
+                                <tr>
+                                    <td> </td>
+
+                                    <td><b>Class 1</b></td>
+
+                                    <td><b>Class 2</b></td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>Mean</td>
+                                    <td>
+                                        <input class="class_one_mean" type="text">
+                                        <input class="class_one_mean" type="text">
+                                    </td>
+
+                                    <td>
+                                        <input class="class_two_mean" type="text">
+                                        <input class="class_two_mean" type="text">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Co-Variance</td>
+                                    <td>
+                                        <input class="class_one_covariance" type="text">
+                                        <input class="class_one_covariance" type="text">
+                                    </td>
+
+                                    <td>
+                                        <input class="class_two_covariance" type="text">
+                                        <input class="class_two_covariance" type="text">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div id="estimate">
+
+                                            <form action="" method="get">
+
+                                                <input type="submit" value="Estimate">
+
+                                            </form>
+
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <input class="class_one_estimate" type="text">
+                                        <input class="class_one_estimate" type="text">
+                                    </td>
+
+                                    <td>
+                                        <input class="class_two_estimate" type="text">
+                                        <input class="class_two_estimate" type="text">
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                        </fieldset>
+                    </form>
+
+                </div>
+
+                <br>
+
+                <div id="generate_random_values">
+
+                    <form>
+                        <fieldset>
+
+                            <legend>Generate Random Values</legend>
+
+                            <table cellpadding="10">
+
+                                <tr>
+                                    <td> </td>
+
+                                    <td><b>Class 1</b></td>
+
+                                    <td><b>Class 2</b></td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>Count</td>
+                                    <td>
+                                        <input class="class_one_count" type="number" value="100">
+                                    </td>
+
+                                    <td>
+                                        <input class="class_two_count" type="number" value="100">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Mean</td>
+                                    <td>
+                                        <input class="class_one_mean" type="text" value="0">
+                                        <input class="class_one_mean" type="text" value="0">
+                                    </td>
+
+                                    <td>
+                                        <input class="class_two_mean" type="text" value="0">
+                                        <input class="class_two_mean" type="text" value="0">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Co-Variance</td>
+                                    <td>
+                                        <input class="class_one_covariance" type="text" value="1">
+                                        <input class="class_one_covariance" type="text" value="0">
+                                    </td>
+
+                                    <td>
+                                        <input class="class_two_covariance" type="text" value="1">
+                                        <input class="class_two_covariance" type="text" value="0">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div id="estimate">
+
+                                            <form action="" method="get">
+
+                                                <input type="submit" value="Generate">
+
+                                            </form>
+
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <input class="class_one_generate" type="text" value="0">
+                                        <input class="class_one_generate" type="text" value="1">
+                                    </td>
+
+                                    <td>
+                                        <input class="class_two_generate" type="text" value="0">
+                                        <input class="class_two_generate" type="text" value="1">
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                        </fieldset>
+                    </form>
+
+                </div>
+
+                <br>
+
+                <div id="resize_axes">
+                    <table>
+                        <tr>
+                            <td>
+
+                                <form action="" method="get">
+
+                                    <input type="submit" value="Resize Axes">
+
+                                </form>
+
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </div>
 
         </fieldset>
-    </form>
 
-    <br>
-
-    <form>
-        <fieldset id="mark_points">
-
-            <legend>Mark Points</legend>
-
-            <table>
-
-                <tr>
-
-                    <td>
-
-                        <div id="class_one_mark">
-
-                            <form action="" method="get">
-
-                                <input type="submit" value="Class 1">
-
-                            </form>
-
-                        </div>
-
-                    </td>
-
-                    <td>
-
-                        <div id="class_two_mark">
-
-                            <form action="" method="get">
-
-                                <input type="submit" value="Class 2">
-
-                            </form>
-
-                        </div>
-
-                    </td>
-
-                    <td>
-
-                        <div id="clear_mark">
-
-                            <form action="" method="get">
-
-                                <input type="submit" value="Clear">
-
-                            </form>
-
-                        </div>
-
-                    </td>
-
-                </tr>
-
-            </table>
-
-        </fieldset>
-    </form>
-
-    <br>
-
-    <form>
-        <fieldset id="calculate">
-
-            <legend>Calculate</legend>
-
-            <table cellpadding="10">
-
-                <tr>
-                    <td> </td>
-
-                    <td><b>Class 1</b></td>
-
-                    <td><b>Class 2</b></td>
-
-                </tr>
-
-                <tr>
-                    <td>Mean</td>
-                    <td>
-                        <input class="class_one_mean" type="text">
-                        <input class="class_one_mean" type="text">
-                    </td>
-
-                    <td>
-                        <input class="class_two_mean" type="text">
-                        <input class="class_two_mean" type="text">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Co-Variance</td>
-                    <td>
-                        <input class="class_one_covariance" type="text">
-                        <input class="class_one_covariance" type="text">
-                    </td>
-
-                    <td>
-                        <input class="class_two_covariance" type="text">
-                        <input class="class_two_covariance" type="text">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <div id="estimate">
-
-                            <form action="" method="get">
-
-                                <input type="submit" value="Estimate">
-
-                            </form>
-
-                        </div>
-                    </td>
-
-                    <td>
-                        <input class="class_one_estimate" type="text">
-                        <input class="class_one_estimate" type="text">
-                    </td>
-
-                    <td>
-                        <input class="class_two_estimate" type="text">
-                        <input class="class_two_estimate" type="text">
-                    </td>
-                </tr>
-
-            </table>
-
-        </fieldset>
-    </form>
-
-    <br>
-
-    <form>
-        <fieldset id="generate_random_values">
-
-            <legend>Generate Random Values</legend>
-
-            <table cellpadding="10">
-
-                <tr>
-                    <td> </td>
-
-                    <td><b>Class 1</b></td>
-
-                    <td><b>Class 2</b></td>
-
-                </tr>
-
-                <tr>
-                    <td>Count</td>
-                    <td>
-                        <input class="class_one_count" type="number" value="100">
-                    </td>
-
-                    <td>
-                        <input class="class_two_count" type="number" value="100">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Mean</td>
-                    <td>
-                        <input class="class_one_mean" type="text">
-                        <input class="class_one_mean" type="text">
-                    </td>
-
-                    <td>
-                        <input class="class_two_mean" type="text">
-                        <input class="class_two_mean" type="text">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Co-Variance</td>
-                    <td>
-                        <input class="class_one_covariance" type="text">
-                        <input class="class_one_covariance" type="text">
-                    </td>
-
-                    <td>
-                        <input class="class_two_covariance" type="text">
-                        <input class="class_two_covariance" type="text">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <div id="estimate">
-
-                            <form action="" method="get">
-
-                                <input type="submit" value="Generate">
-
-                            </form>
-
-                        </div>
-                    </td>
-
-                    <td>
-                        <input class="class_one_generate" type="text">
-                        <input class="class_one_generate" type="text">
-                    </td>
-
-                    <td>
-                        <input class="class_two_generate" type="text">
-                        <input class="class_two_generate" type="text">
-                    </td>
-                </tr>
-
-            </table>
-
-        </fieldset>
-    </form>
-
-    <br>
-
-    <table id="resize_axes">
-        <tr>
-            <td>
-
-                <form action="" method="get">
-
-                    <input type="submit" value="Resize Axes">
-
-                </form>
-
-            </td>
-
-        </tr>
-
-    </table>
+    </div>
+<script>
+
+function t_one_load() {
+}
+var class1 = {
+  x: [3.5, 3.0, 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1, 3.7, 3.4, 3.0, 3.0, 4.0, 4.4, 3.9, 3.5, 3.8, 3.8, 3.4, 3.7, 3.6, 3.3, 3.4, 3.0, 3.4, 3.5, 3.4, 3.2, 3.1, 3.4, 4.1, 4.2, 3.1, 3.2, 3.5, 3.6, 3.0, 3.4, 3.5, 2.3, 3.2, 3.5, 3.8, 3.0, 3.8, 3.2, 3.7, 3.3],
+  y: [0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.2, 0.1, 0.1, 0.2, 0.4, 0.4, 0.3, 0.3, 0.3, 0.2, 0.4, 0.2, 0.5, 0.2, 0.2, 0.4, 0.2, 0.2, 0.2, 0.2, 0.4, 0.1, 0.2, 0.2, 0.2, 0.2, 0.1, 0.2, 0.2, 0.3, 0.3, 0.2, 0.6, 0.4, 0.3, 0.2, 0.2, 0.2, 0.2],
+
+
+  mode: 'markers',
+  type: 'scatter',
+  name: 'Class 1',
+  marker: { size: 4.5 }
+};
+
+var class2 = {
+  x: [1.4, 1.5, 1.5, 1.3, 1.5, 1.3, 1.6, 1.0, 1.3, 1.4, 1.0, 1.5, 1.0, 1.4, 1.3, 1.4, 1.5, 1.0, 1.5, 1.1, 1.8, 1.3, 1.5, 1.2, 1.3, 1.4, 1.4, 1.7, 1.5, 1.0, 1.1, 1.0, 1.2, 1.6, 1.5, 1.6, 1.5, 1.3, 1.3, 1.3, 1.2, 1.4, 1.2, 1.0, 1.3, 1.2, 1.3, 1.3, 1.1, 1.3],
+  y: [3.2, 3.2, 3.1, 2.3, 2.8, 2.8, 3.3, 2.4, 2.9, 2.7, 2.0, 3.0, 2.2, 2.9, 2.9, 3.1, 3.0, 2.7, 2.2, 2.5, 3.2, 2.8, 2.5, 2.8, 2.9, 3.0, 2.8, 3.0, 2.9, 2.6, 2.4, 2.4, 2.7, 2.7, 3.0, 3.4, 3.1, 2.3, 3.0, 2.5, 2.6, 3.0, 2.6, 2.3, 2.7, 3.0, 2.9, 2.9, 2.5, 2.8],
+  mode: 'markers',
+  type: 'scatter',
+  name: 'Class 2',
+  marker: { size: 4.5 }
+};
+
+var data = [ class1, class2 ];
+
+var layout = { 
+  xaxis: {
+    range: [ -4.75, 5.25 ] 
+  },
+  yaxis: {
+    range: [-4.75, 5.25]
+  },
+  title:'<b>Mean and Covariance<b>',
+
+};
+
+Plotly.newPlot('graph', data, layout, {showSendToCloud: true});
+       
+   </script> 
 </body>
 
 </html>
